@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>Flipify, A Counter that aint suckin</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  	<script>window.jQuery || document.write('<script src="jquery.min.js"><\/script>')</script>
+    <script src="flipify.js" type="text/javascript" charset="utf-8"></script>
+<style type="text/css">
+    br { clear: both; }
+	h2{  clear: both;float:left; border-bottom:1px solid #444; margin: 50px  0 10px; padding:10px 5px 5px; }
+	.wrapitup{
+		height:100px;
+		width:700px;
+	}
+		
+    .cntSeparator {
+        font-size: 54px;
+        color: #000;
+    }	
+		  
+	.desc { margin: 5px 3px;float:left }
+	.info {
+        width: 70px;
+        font-size: 13px;
+        font-weight: bold;
+        color: #666;
+      }
+	.desc .long{ width: 175px; }
+	.box{  width:700px; 	}
+	
+	#resume{display:none}
+</style>
+</head>	
+
+<body>
+<header>
+	<div>
+		<img id="canister" src="img/logo.jpg" alt="Film Canister" />
+	</div>
+</header>
+	
+	 <script type="text/javascript">
+		$(document).ready(function() {
+ 	    	 $('#counter2').flipify({
+		          	startTime: '09:23:59:50',
+ 		      });
+  			function pause() {
+				console.log('pause');
+				$('#counter1').pause();	
+				$('#resume').toggle();
+				$('#pause').toggle();
+
+			};
+			function restart() {
+				console.log('restarted');
+				$('#counter1').restart();	
+				$('#resume').toggle();
+				$('#pause').toggle();
+
+			};
+			$('#pause').click(pause);
+			$('#resume').click(restart);
+	  	});
+	</script>
+	<div class='wrapitup'>
+		<div id="counter2" class='box'></div>
+		<div class="desc">
+ 			<div class='box'>
+				<input type="button" id="pause" value="Pause" />
+				<input type="button" id="resume" value="Resume" />
+			</div>
+		</div>
+	</div>
+</body>
+</html>

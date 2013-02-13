@@ -1,0 +1,368 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+
+}
+
+blockquote, q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+body {
+  margin: 0 auto;
+  color: #222222;
+  font-family: "Century Schoolbook";
+
+}
+h1 {
+  display: inline-block;
+}
+h2 {
+  display: inline-block;
+  font-family: "LeagueGothicRegular";
+  font-size: 30px;
+  color: #222222;
+}
+h3 {
+  display: inline-block;
+  font-family: "LeagueGothicRegular";
+  font-size: 40px;
+  color: #222222;
+  margin-bottom: 7px;
+}
+
+#canister {
+	float:left;
+	display:inline-block;
+
+}
+#evlogo {
+	position:relative;
+	left: 90px;
+	top: -20px;
+}
+#submit {
+	position: relative;
+	left: 180px;
+}
+#save {
+	position:relative;
+	left: 610px;
+}
+ul {
+  display: inline-block;
+}
+li {
+  display: inline-block;
+  margin-left: 10px;
+}
+header {
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: 0 auto;
+  padding-top:10px;
+  padding-bottom:230px;
+
+}
+header div {
+  position: relative;
+  left: -0px;
+  width: 800px;
+  margin: 0 auto;
+
+}
+#app-wrapper {
+  margin: 0 auto;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 40px;
+}
+#app-wrapper article {
+  margin: 0 auto;
+}
+
+#app-header {
+  margin: 0 auto;
+  text-align: center;
+  width: 50%;
+  margin-bottom: 20px;
+}
+#header {
+  float: left;
+}
+#app-form {
+  float:right;
+  position:relative;
+  top: 10px;
+   left: 90px;
+  width: 22%;
+}
+#login {
+  float: right;
+  position:relative;
+  left: 570px;
+  top: -20px;
+}
+#title {
+  position:relative;
+  left: 570px;
+
+}
+#app-footer {
+	margin:0 auto;
+	width:50%;
+	text-align:center;
+	margin-top:20px;
+}
+#savebutton {
+	display:none;
+	border-radius:5px;
+}
+#status {
+	display:none;
+}
+#button-bar {
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
+#total-app {
+	padding-top:25px;
+	border-top:1px solid black;
+}
+#app {
+	  font-family: "UbuntuMedium";
+	  margin:0 auto;
+	  width:960px;
+	  padding:20px;
+	  border: 2px solid #222222;
+	  -webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+#app p {
+	margin-bottom:5px;
+}
+
+#counter-hrs{
+	display:inline;
+}
+#counter-mins{
+	display:inline;
+}
+#counter-secs{
+	display:inline;
+}
+
+.timestamp {
+	color:#474747;
+	font-family: "ArvoBoldItalic";
+}
+#article {
+  margin-bottom: 20px;
+  font-family: "UbuntuMedium";
+  line-height: 1.6em;
+  margin: 0 auto;
+}
+#film-title {
+  margin-bottom: 8px;
+}
+.timer {
+  font-family: monospace;
+  color: black;
+  padding-left: 15px;
+  padding-bottom: 8px;
+}
+button .butn {
+  font-family: "Helvetica Neue";
+}
+footer {
+  clear: both;
+  color: #222222;
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 40px;
+  padding-bottom: 100px;
+  text-align: center;
+  font-family: "ArvoItalic";
+}
+
+#responsive {
+	text-align:center;
+	margin-bottom:20px;
+	display:none;
+}
+
+@media screen and (max-width:960px) {
+	#responsive {
+		display:inline;
+		text-align:center;
+	}
+	#app {
+		width:auto;
+		margin-top:20px;
+		margin-left:3%;
+		margin-right:3%;
+	}
+}
+
+
+@font-face {
+  font-family: 'LeagueGothicRegular';
+  src: url('fonts/League_Gothic-webfont.eot');
+  src: url('fonts/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/League_Gothic-webfont.ttf') format('truetype'), url('fonts/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'UbuntuMedium';
+  src: url('fonts/Ubuntu-M-webfont.eot');
+  src: url('fonts/Ubuntu-M-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/Ubuntu-M-webfont.woff') format('woff'), url('fonts/Ubuntu-M-webfont.ttf') format('truetype'), url('fonts/Ubuntu-M-webfont.svg#UbuntuMedium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ArvoRegular';
+  src: url('fonts/Arvo-Regular-webfont.eot');
+  src: url('fonts/Arvo-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/Arvo-Regular-webfont.woff') format('woff'), url('fonts/Arvo-Regular-webfont.ttf') format('truetype'), url('fonts/Arvo-Regular-webfont.svg#ArvoRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ArvoItalic';
+  src: url('fonts/Arvo-Italic-webfont.eot');
+  src: url('fonts/Arvo-Italic-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/Arvo-Italic-webfont.woff') format('woff'), url('fonts/Arvo-Italic-webfont.ttf') format('truetype'), url('fonts/Arvo-Italic-webfont.svg#ArvoItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ArvoBold';
+  src: url('fonts/Arvo-Bold-webfont.eot');
+  src: url('fonts/Arvo-Bold-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/Arvo-Bold-webfont.woff') format('woff'), url('fonts/Arvo-Bold-webfont.ttf') format('truetype'), url('fonts/Arvo-Bold-webfont.svg#ArvoRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ArvoBoldItalic';
+  src: url('fonts/Arvo-BoldItalic-webfont.eot');
+  src: url('fonts/Arvo-BoldItalic-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/Arvo-BoldItalic-webfont.woff') format('woff'), url('fonts/Arvo-BoldItalic-webfont.ttf') format('truetype'), url('fonts/Arvo-BoldItalic-webfont.svg#ArvoItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

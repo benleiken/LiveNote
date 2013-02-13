@@ -1,0 +1,249 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>timepad</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<script type="text/javascript" src="less.js"></script>
+	<script src="jquery-1.6.4.min.js" type="text/javascript"></script>
+	<script src="js/jquery.flipCounter.1.2.pack.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/jquery.textarea-expander.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+
+<header>
+	<h1 id="logo">TIMEPAD</h1>
+	<nav>
+		<ul>
+			<li><h2><a href="#">who and what and why</a></h2></li>
+			<li><h2><a href="#">how to use timepad</a></h2></li>
+			<li><h2><a href="#">the future of timepad</a></h2></l1>
+		</ul>
+	</nav>
+</header>
+
+<section id="whatis-wrapper">
+
+		<article id="what-is">
+			<h3>timepad was designed by...</h3>
+			<p>...a student, for students, to solve a very specific problem 
+			that sometimes plagues students.  Any student, at at least one point 
+			in his or her academic career, may be expected to watch, analyze, and 
+			annotate a movie in explicit detail.  A proper analysis and interpretation 
+			of any film must take into account sound, editing, cinematography, directing, 
+			and the thousands of other elements that go into a great movie.</p>
+		</article>
+
+</section>
+
+<section id="app-wrapper">
+
+	<article id="use">
+			<h3>click the button to start the timer, and type away!</h3>
+			<p id="hint">Hint: Hit enter to make a timestamp!</p>
+	</article>
+</section>
+<div id="total-app">
+
+	<div id="app-header">
+		<button class="btn success" id="start">Start</button>
+		<button class="btn info" id="pause">Pause</button>
+		<br/>
+		<br/>
+		<div id="counter-hrs"><input type="hidden" name="counter-hrs-value" value="0" /></div>
+		<div id="counter-mins"><input type="hidden" name="counter-mins-value" value="0" /></div>
+		<div id="counter-secs"><input type="hidden" name="counter-secs-value" value="0" /></div>
+	</div>
+		<script type="text/javascript">
+		$(function() {
+			var enter_counter = 0;
+			$('#notesarea').keydown(function(event){
+				var currenthrs = 0;
+				var currentmins = 0;
+				var currentsecs = 0;
+			
+				if (event.which =='13' && enter_counter % 2 === 0)
+				{
+					currenthrs = $("#counter-hrs").flipCounter("getNumber");
+					currentmins = $("#counter-mins").flipCounter("getNumber");
+					currentsecs = $("#counter-secs").flipCounter("getNumber");
+					//$("#app").append("you hit enter");
+					if (currentmins < 10 && currentsecs < 10)
+					{
+						console.log("vvv" + " " + "0" + currenthrs + ":" + "0" + currentmins + ":" + "0" + currentsecs + " " + "vvv");
+						$("#app").append("vvv" + " " + "0" + currenthrs + ":" + "0" + currentmins + ":" + "0" + currentsecs + "vvv");
+					}
+					if (currentmins < 10 && currentsecs > 10)
+					{
+						console.log("vvv" + " " + "0" + currenthrs + ":" + "0" + currentmins + ":" + currentsecs + " " + "vvv");
+						$("#app").append("vvv" + " " + "0" + currenthrs + ":" + "0" + currentmins + ":" + "0" + currentsecs + "vvv");
+					}
+					if (currentmins > 10 && currentsecs < 10)
+					{
+						console.log("vvv" + " " + "0" + currenthrs + ":" + currentmins + ":" + "0" + currentsecs + "vvv");
+						$("#app").append("vvv" + " " + "0" + currenthrs + ":" + currentmins + ":" + "0" + currentsecs + "vvv");
+					}
+					if (currentmins > 10 && currentsecs > 10)
+					{
+						console.log("vvv" + " " + "0" + currenthrs + ":" + currentmins + ":" + currentsecs + "vvv");
+						$("#app").append("vvv" + " " + "0" + currenthrs + ":" + currentmins + ":" + currentsecs + "vvv");
+					}
+				} else if (event.which == '13' && enter_counter % 2 == 1)
+				{
+					currenthrs = $("#counter-hrs").flipCounter("getNumber");
+					currentmins = $("#counter-mins").flipCounter("getNumber");
+					currentsecs = $("#counter-secs").flipCounter("getNumber");
+					//$("#app").append("you hit enter");
+					if (currentmins < 10 && currentsecs < 10)
+					{
+						console.log("^^^" + " " + "0" + currenthrs + ":" + "0" + currentmins + ":" + "0" + currentsecs + " " + "^^^");
+						$("#app").append("^^^" + " " + "0" + currenthrs + ":" + "0" + currentmins + ":" + "0" + currentsecs + "^^^");
+					}
+					if (currentmins < 10 && currentsecs > 10)
+					{
+						console.log("^^^" + " " + "0" + currenthrs + ":" + "0" + currentmins + ":" + currentsecs + " " + "^^^");
+						$("#app").append("^^^" + " " + "0" + currenthrs + ":" + "0" + currentmins + ":" + "0" + currentsecs + "^^^");
+					}
+					if (currentmins > 10 && currentsecs < 10)
+					{
+						console.log("^^^" + " " + "0" + currenthrs + ":" + currentmins + ":" + "0" + currentsecs + "^^^");
+						$("#app").append("^^^" + " " + "0" + currenthrs + ":" + currentmins + ":" + "0" + currentsecs + "^^^");
+					}
+					if (currentmins > 10 && currentsecs > 10)
+					{
+						console.log("^^^" + " " + "0" + currenthrs + ":" + currentmins + ":" + currentsecs + "^^^");
+						$("#app").append("^^^" + " " + "0" + currenthrs + ":" + currentmins + ":" + currentsecs + "^^^");
+					}
+				}
+				enter_counter++;
+			});
+			
+			function incrementMinutes()
+			{
+				var minutes_holder = 0;
+				var hours_holder = 0;
+				
+				minutes_holder++;
+				// console.log(minutes_holder);
+				$("#counter-mins").flipCounter("setNumber",minutes_holder);
+				$("#counter-secs").flipCounter("setNumber",0);
+				$("#counter-secs").flipCounter("startAnimation",
+        			{
+                		number: 0, // the number we want to scroll from
+                		end_number: 60, // the number we want the counter to scroll to
+                		easing: false, // this easing function to apply to the scroll.
+                		duration: 60000, // number of ms animation should take to complete
+                		onAnimationStopped: incrementMinutes
+        			});
+				if (minutes_holder === 60)
+				{
+					minutes_holder = 0;
+					hours_holder++;
+					$("#counter-hrs").flipCounter("setNumber",hours_holder);
+				}
+			}
+			
+			$("#counter-secs").flipCounter({
+        		number:0, // the initial number the counter should display, overrides the hidden field
+        		numIntegralDigits:2, // number of places left of the decimal point to maintain
+       			numFractionalDigits:0, // number of places right of the decimal point to maintain
+        		digitClass:"counter-digit", // class of the counter digits
+        		counterFieldName:"counter-secs-value", // name of the hidden field
+        		digitHeight:40, // the height of each digit in the flipCounter-medium.png sprite image
+        		digitWidth:30, // the width of each digit in the flipCounter-medium.png sprite image
+        		imagePath:"img/flipCounter-medium.png", // the path to the sprite image relative to your html document
+       			easing: false, // the easing function to apply to animations, you can override this with a jQuery.easing method
+        		duration:60000, // duration of animations
+        		onAnimationStarted:false, // call back for animation upon starting
+        		onAnimationStopped:true, // call back for animation upon stopping
+        		onAnimationPaused:false, // call back for animation upon pausing
+        		onAnimationResumed:false // call back for animation upon resuming from pause
+			});
+			
+			$("#counter-mins").flipCounter({
+        		number:0, // the initial number the counter should display, overrides the hidden field
+        		numIntegralDigits:2, // number of places left of the decimal point to maintain
+       			numFractionalDigits:0, // number of places right of the decimal point to maintain
+        		digitClass:"counter-digit", // class of the counter digits
+        		counterFieldName:"counter-mins-value", // name of the hidden field
+        		digitHeight:40, // the height of each digit in the flipCounter-medium.png sprite image
+        		digitWidth:30, // the width of each digit in the flipCounter-medium.png sprite image
+        		imagePath:"img/flipCounter-medium.png", // the path to the sprite image relative to your html document
+       			easing: false, // the easing function to apply to animations, you can override this with a jQuery.easing method
+        		onAnimationStarted:false, // call back for animation upon starting
+        		onAnimationStopped:false, // call back for animation upon stopping
+        		onAnimationPaused:false, // call back for animation upon pausing
+        		onAnimationResumed:false // call back for animation upon resuming from pause
+			});
+			
+			$("#counter-hrs").flipCounter({
+        		number:0, // the initial number the counter should display, overrides the hidden field
+        		numIntegralDigits:2, // number of places left of the decimal point to maintain
+       			numFractionalDigits:0, // number of places right of the decimal point to maintain
+        		digitClass:"counter-digit", // class of the counter digits
+        		counterFieldName:"counter-hrs-value", // name of the hidden field
+        		digitHeight:40, // the height of each digit in the flipCounter-medium.png sprite image
+        		digitWidth:30, // the width of each digit in the flipCounter-medium.png sprite image
+        		imagePath:"img/flipCounter-medium.png", // the path to the sprite image relative to your html document
+       			easing: false, // the easing function to apply to animations, you can override this with a jQuery.easing method
+        		onAnimationStarted:false, // call back for animation upon starting
+        		onAnimationStopped:false, // call back for animation upon stopping
+        		onAnimationPaused:false, // call back for animation upon pausing
+        		onAnimationResumed:false // call back for animation upon resuming from pause
+			});
+	
+			$("#start").click(function() 
+			{
+				//console.log("started");
+				$("#counter-secs").flipCounter("startAnimation",
+        			{
+                		number: 0, // the number we want to scroll from
+                		end_number: 60, // the number we want the counter to scroll to
+                		easing: false, // this easing function to apply to the scroll.
+                		duration: 60000, // number of ms animation should take to complete
+                		onAnimationStopped: incrementMinutes
+        			});
+    		});
+    
+    		$("#pause").click(function() 
+			{
+				$("#counter-secs").flipCounter("pauseAnimation"); // pause animation, can be resumed by calling startAnimation
+    		});
+			
+			function storage()
+			{
+				localStorage.setItem("name", "Hello World!"); //saves to the database, key/value
+				document.write(localStorage.getItem("name")); //Hello World!
+				localStorage.removeItem("name"); //deletes the matching item from the database
+			}
+			
+						
+		});
+		
+		</script>
+	<div id="textarea-div">
+		<form action="?" method="post" id="notesarea">
+			<fieldset>
+			<textarea name="textarea1" class="expand" id="app">
+
+
+Hit enter to start the timer.
+When you want to start taking notes, hit enter to make a starting time stamp. Then furiously type away whatever brilliant analysis you want to make about the current scene...
+And hit enter again to make an ending time stamp. A starting and ending time stamp will make finding specific scenes easier further down the road.
+	</textarea>
+	</fieldset>
+	</form>
+	</div>
+	
+</div>
+
+
+<footer>
+	<p>Designed and Constructed by Sam Daniel</p>
+</footer>
+
+</body>
+</html>
+	
